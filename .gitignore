@@ -1,0 +1,21 @@
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Dependencies and build output (reserved for the application stacks)
+node_modules/
+dist/
+build/
+coverage/
+.expo/
+
+# Local tooling and operating-system files
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+
+# Local Docker overrides and volumes
+compose.override.yaml
+docker-data/
