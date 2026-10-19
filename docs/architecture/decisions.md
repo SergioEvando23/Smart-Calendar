@@ -14,3 +14,14 @@ Este documento registra somente decisões presentes no planejamento do escopo 01
 ## Pendências de arquitetura
 
 As stacks de `apps/web`, `apps/mobile` e `apps/api`, bem como as responsabilidades concretas de `packages/shared` e `packages/contracts`, não estavam documentadas no repositório. Portanto, não foram escolhidas nem geradas neste escopo.
+
+## Decisões confirmadas no escopo 01.02
+
+| Decisão | Origem | Impacto |
+| --- | --- | --- |
+| Usar React com TypeScript na Web. | Planejamento 01.02 | `apps/web` contém a interface técnica e o cliente HTTP. |
+| Usar Node.js, Fastify e Prisma na API. | Planejamento 01.02 | `apps/api` expõe somente endpoints técnicos e verifica PostgreSQL via Prisma. |
+| Expor somente a Web no host. | Planejamento 01.02 e decisão local de infraestrutura | O proxy Nginx encaminha `/api/` para a API na rede privada; API e banco não publicam portas. |
+| Não criar migration inicial vazia. | Decisão técnica local | Não há modelos neste escopo; migrations só serão introduzidas junto da primeira entidade persistida. |
+
+`apps/mobile` permanece sem implementação: o escopo confirma que a plataforma ainda depende do planejamento original.
